@@ -172,7 +172,7 @@ public class Main extends Application{
                         }
                         else if(material1== GOLD)
                         {
-                            specificHeat1=GOLD;
+                            specificHeat1=GOLD_SH;
                             visuals.undefined1=false;
                         }
 
@@ -189,7 +189,7 @@ public class Main extends Application{
                         }
                         else if(material2== GOLD)
                         {
-                            specificHeat2=GOLD;
+                            specificHeat2=GOLD_SH;
                             visuals.undefined2=false;
                         }
 
