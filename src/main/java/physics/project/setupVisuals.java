@@ -22,6 +22,11 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
 public class setupVisuals {
+
+    private final int MERCURY = 1;
+    private final int COPPER = 2;
+    private final int GOLD =3;
+
     //all the object Vbox layouts are here
 
     //VBoxes that encapsulate the components
@@ -79,14 +84,30 @@ public class setupVisuals {
 
     //output values
     public Label finalTemp;
-    private Label objectImage;
+    public Label energyLoss;
+    public Label finalMass;
+
+
     private VBox outputs;
     public Label errorMessage;
-    private Image materialImage;
-    private ImageView materialView;
+
 
     public boolean undefined1;
     public boolean undefined2;
+
+    private VBox center;
+
+    //images
+    private Image materialImage1;
+    private ImageView materialView1;
+    private Image materialImage2;
+    private ImageView materialView2;
+    private HBox materialImages;
+    public int material1;
+    public int material2;
+
+    private Label object1Image;
+    private Label object2Image;
 
 
 
@@ -239,18 +260,29 @@ public class setupVisuals {
 
         outputs = new VBox();
         errorMessage = new Label();
-        objectImage = new Label();
-        finalTemp = new Label();
-        materialImage = new Image(new FileInputStream(getClass().getClassLoader().getResource("mercury.jpeg").getFile()));
+        object1Image = new Label();
+        object2Image = new Label();
+        finalMass = new Label("Final mass");
+        energyLoss = new Label("Energy energyLoss");
+        finalTemp = new Label("Final temperature");
+
+        finalMass.setFont(Font.font("Arial", FontWeight.BOLD, 20));
+        energyLoss.setFont(Font.font("Arial", FontWeight.BOLD, 20));
+        finalTemp.setFont(Font.font("Arial", FontWeight.BOLD, 20));
+
+
 
         errorMessage.setFont(Font.font("Arial",FontWeight.BOLD, 20));
 
-        //Setting the image view
-        materialView = new ImageView(materialImage);
 
-        objectImage.setGraphic(materialView);
+        center = new VBox();
 
-        outputs.getChildren().addAll(run,finalTemp,errorMessage);
+        materialImages = new HBox();
+        materialImages.getChildren().addAll(object1Image,object2Image);
+        
+        center.getChildren().addAll(massVlayout,materialImages);
+
+        outputs.getChildren().addAll(run,finalTemp,energyLoss,finalMass,errorMessage);
 
 
 
@@ -258,10 +290,58 @@ public class setupVisuals {
         //adding to root
         root.setTop(instructions);
         root.setLeft(objectVlayout);
-        root.setCenter(massVlayout);
+        root.setCenter(center);
         root.setBottom(tempVlayout);
         root.setRight(outputs);
 
+
+    }
+
+    public void update() throws FileNotFoundException {
+
+
+
+
+        if(material1==MERCURY)
+        {
+            materialImage1 = new Image(new FileInputStream(getClass().getClassLoader().getResource("mercury.png").getFile()));
+        }
+        if(material1==COPPER)
+        {
+            materialImage1 = new Image(new FileInputStream(getClass().getClassLoader().getResource("copper.png").getFile()));
+        }
+        if(material1==GOLD)
+        {
+            materialImage1 = new Image(new FileInputStream(getClass().getClassLoader().getResource("gold.png").getFile()));
+        }
+
+        //material 2
+        if(material2==MERCURY)
+        {
+            materialImage2 = new Image(new FileInputStream(getClass().getClassLoader().getResource("mercury.png").getFile()));
+        }
+        if(material2==COPPER)
+        {
+            materialImage2 = new Image(new FileInputStream(getClass().getClassLoader().getResource("copper.png").getFile()));
+        }
+        if(material2==GOLD)
+        {
+            materialImage2 = new Image(new FileInputStream(getClass().getClassLoader().getResource("gold.png").getFile()));
+        }
+
+        //Setting the image view
+        materialView1 = new ImageView(materialImage1);
+        materialView2 = new ImageView(materialImage2);
+
+        materialView1.setFitWidth(300);
+        materialView1.setFitHeight(250);
+
+        object1Image.setGraphic(materialView1);
+
+        materialView2.setFitWidth(300);
+        materialView2.setFitHeight(250);
+
+        object2Image.setGraphic(materialView2);
 
     }
 }

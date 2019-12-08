@@ -26,6 +26,16 @@ public class Main extends Application{
     private double specificHeat1 = 0;
     private double specificHeat2 = 0;
 
+    //input fields
+    private double mass1 = 0;
+    private double mass2 = 0;
+    private double temperature1 =0;
+    private double temperature2=0;
+
+    //output fields
+    private double finalMass = 0;
+    private double energyLoss=0;
+    private double finalTemp = 0;
 
 
     public static void main(String[] args) {
@@ -54,6 +64,7 @@ public class Main extends Application{
                                          @Override
                                          public void handle(ActionEvent actionEvent) {
                                              material1=MERCURY;
+                                             visuals.material1=material1;
                                              if(visuals.copper1.isSelected())
                                              {
                                                  visuals.copper1.setSelected(false);
@@ -69,6 +80,7 @@ public class Main extends Application{
             @Override
             public void handle(ActionEvent actionEvent) {
                 material1=COPPER;
+                visuals.material1=material1;
                 if(visuals.mercury1.isSelected())
                 {
                     visuals.mercury1.setSelected(false);
@@ -84,6 +96,7 @@ public class Main extends Application{
             @Override
             public void handle(ActionEvent actionEvent) {
                 material1=GOLD;
+                visuals.material1=material1;
                 if(visuals.copper1.isSelected())
                 {
                     visuals.copper1.setSelected(false);
@@ -100,6 +113,7 @@ public class Main extends Application{
             @Override
             public void handle(ActionEvent actionEvent) {
                 material2=MERCURY;
+                visuals.material2=material2;
                 if(visuals.copper2.isSelected())
                 {
                     visuals.copper2.setSelected(false);
@@ -115,6 +129,7 @@ public class Main extends Application{
             @Override
             public void handle(ActionEvent actionEvent) {
                 material2=COPPER;
+                visuals.material2=material2;
                 if(visuals.mercury2.isSelected())
                 {
                     visuals.mercury2.setSelected(false);
@@ -130,6 +145,7 @@ public class Main extends Application{
             @Override
             public void handle(ActionEvent actionEvent) {
                 material2=GOLD;
+                visuals.material2=material2;
                 if(visuals.copper2.isSelected())
                 {
                     visuals.copper2.setSelected(false);
@@ -193,7 +209,48 @@ public class Main extends Application{
                         if(!visuals.undefined1&&!visuals.undefined2)
                         {
                             visuals.errorMessage.setText("");
+                            if(!visuals.mass1Field.getText().equals("Object1 mass")) {
+                                mass1 = Double.parseDouble(visuals.mass1Field.getText());
+                            }
+                            else
+                            {
+                                visuals.errorMessage.setText(visuals.errorMessage.getText()+"Please type in a number for mass 1");
+                            }
+                            if(!visuals.mass2Field.getText().equals("Object2 mass")) {
+                                mass2 = Double.parseDouble(visuals.mass2Field.getText());
+                            }
+                            else
+                            {
+                                visuals.errorMessage.setText(visuals.errorMessage.getText()+"Please type in a number for mass 2");
+                            }
+
+                            if(!visuals.mass1Field.getText().equals("Object1 temperature")) {
+                                temperature1 = Double.parseDouble(visuals.temp1Field.getText());
+                            }
+                            else
+                            {
+                                visuals.errorMessage.setText(visuals.errorMessage.getText()+"Please type in a number for temperature 1");
+                            }
+                            if(!visuals.mass1Field.getText().equals("Object2 temperature")) {
+                                temperature2 = Double.parseDouble(visuals.temp2Field.getText());
+                            }
+                            else
+                            {
+                                visuals.errorMessage.setText(visuals.errorMessage.getText()+"Please type in a number for temperature 2");
+                            }
+
+                            visuals.finalTemp.setText("Final Temperature: "+String.valueOf(Calc.calculateFinalTemperature(mass1,mass2,specificHeat1,specificHeat2,temperature1,temperature2)));
+                            visuals.finalMass.setText("Final Mass: "+String.valueOf(Calc.calculateFinalMass(mass1,mass2)));
+                            visuals.energyLoss.setText("Change in temperature: "+String.valueOf(Calc.calculateEnergyLoss(temperature1,temperature2)));
+                            try {
+                                visuals.update();
+                            } catch (FileNotFoundException e) {
+                                e.printStackTrace();
+                            }
+
                         }
+
+
 
                     }
                 });
