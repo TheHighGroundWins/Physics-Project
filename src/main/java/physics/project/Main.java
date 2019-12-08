@@ -68,7 +68,7 @@ public class Main extends Application{
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Physics sim");
-        BorderLayout root = new BorderLayout();
+        BorderPane root = new BorderPane();
         objectVlayout = new VBox();
         object1Vlayout = new VBox();
         object2Vlayout = new VBox();
@@ -163,17 +163,14 @@ public class Main extends Application{
         tempVlayout.getChildren().addAll(masterTemp1Outer,masterTemp2Outer);
 
         //adding to root
-        root.add(objectVlayout,BorderLayout.LINE_START);
-        root.getChildren().add(massVlayout);
-        root.getChildren().add(tempVlayout);
-        objectVlayout.setAlignment(Pos.TOP_LEFT);
-        massVlayout.setAlignment(Pos.TOP_RIGHT);
-        tempVlayout.setAlignment(Pos.BOTTOM_RIGHT);
+        root.setLeft(objectVlayout);
+        root.setCenter(massVlayout);
+        root.setBottom(tempVlayout);
 
 
 
 
-        primaryStage.setScene(new Scene(root, 300, 250));
+        primaryStage.setScene(new Scene(root, 1080, 600));
         primaryStage.show();
 
     }
