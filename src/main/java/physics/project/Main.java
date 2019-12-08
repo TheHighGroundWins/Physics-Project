@@ -159,11 +159,6 @@ public class Main extends Application{
                             specificHeat1=GOLD;
                             visuals.undefined1=false;
                         }
-                        else
-                        {
-                            visuals.undefined1=true;
-                                visuals.errorMessage.setText("Please check a box for object 1");
-                        }
 
                         //material 2 specific heat determiner
                         if(material2== MERCURY)
@@ -181,11 +176,19 @@ public class Main extends Application{
                             specificHeat2=GOLD;
                             visuals.undefined2=false;
                         }
-                        else
+
+                        if(!visuals.mercury1.isSelected()&&!visuals.copper1.isSelected()&&!visuals.gold1.isSelected())
+                        {
+                            visuals.undefined1=true;
+                            visuals.errorMessage.setText("Please check a box for object 1");
+                        }
+
+                        if(!visuals.mercury2.isSelected()&&!visuals.copper2.isSelected()&&!visuals.gold2.isSelected())
                         {
                             visuals.undefined2=true;
-                                visuals.errorMessage.setText(visuals.errorMessage.getText() + "\nplease check a box or object 2");
+                            visuals.errorMessage.setText(visuals.errorMessage.getText() + "\nPlease check a box or object 2");
                         }
+
 
                         if(!visuals.undefined1&&!visuals.undefined2)
                         {
