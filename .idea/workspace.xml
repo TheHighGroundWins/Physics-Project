@@ -2,10 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="962ad0df-f081-4a2d-ac8a-c02381f2b674" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/physics/project/setupVisuals.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mercury.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mercury.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mercury.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/mercury.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/physics/project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/physics/project/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/physics/project/setupVisuals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/physics/project/setupVisuals.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/physics/project/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/physics/project/Main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/physics/project/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/physics/project/Main$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/physics/project/Main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/physics/project/Main$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/physics/project/Main$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/physics/project/Main$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/physics/project/Main$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/physics/project/Main$5.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/physics/project/Main$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/physics/project/Main$6.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/physics/project/Main$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/physics/project/Main$7.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/physics/project/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/physics/project/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/physics/project/setupVisuals.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/physics/project/setupVisuals.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +43,11 @@
     </option>
   </component>
   <component name="ProjectId" id="1UaWMG07HrLbeJqQZbQhUZePPu3" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Physics-Project" />
     <property name="project.structure.last.edited" value="SDKs" />
@@ -89,5 +104,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>

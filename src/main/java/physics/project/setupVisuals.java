@@ -8,6 +8,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
@@ -15,6 +17,10 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
 public class setupVisuals {
     //all the object Vbox layouts are here
 
@@ -72,11 +78,19 @@ public class setupVisuals {
     public Button run;
 
     //output values
-    private Label finalTemp;
+    public Label finalTemp;
     private Label objectImage;
+    private VBox outputs;
+    public Label errorMessage;
+    private Image materialImage;
+    private ImageView materialView;
 
-    public void setup(BorderPane root)
-    {
+    public boolean undefined1;
+    public boolean undefined2;
+
+
+
+    public void setup(BorderPane root) throws FileNotFoundException {
         //initializing the instructions
         instructions= new Label("to calculate the final temperature" +
                 "\n please input your values then press run");
@@ -223,12 +237,30 @@ public class setupVisuals {
         tempVlayout.getChildren().addAll(masterTemp1Outer,masterTemp2Outer);
         //-----------------------------
 
+        outputs = new VBox();
+        errorMessage = new Label();
+        objectImage = new Label();
+        finalTemp = new Label();
+        materialImage = new Image(new FileInputStream(getClass().getClassLoader().getResource("mercury.jpeg").getFile()));
+
+        errorMessage.setFont(Font.font("Arial",FontWeight.BOLD, 20));
+
+        //Setting the image view
+        materialView = new ImageView(materialImage);
+
+        objectImage.setGraphic(materialView);
+
+        outputs.getChildren().addAll(run,finalTemp,errorMessage);
+
+
+
+
         //adding to root
         root.setTop(instructions);
         root.setLeft(objectVlayout);
         root.setCenter(massVlayout);
         root.setBottom(tempVlayout);
-        root.setRight(run);
+        root.setRight(outputs);
 
 
     }

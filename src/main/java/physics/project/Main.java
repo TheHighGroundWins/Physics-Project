@@ -8,6 +8,8 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+import java.io.FileNotFoundException;
+
 
 public class Main extends Application{
     private setupVisuals visuals = new setupVisuals();
@@ -34,7 +36,7 @@ public class Main extends Application{
 
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws FileNotFoundException {
         //setting the title
         primaryStage.setTitle("Physics sim");
 
@@ -145,36 +147,49 @@ public class Main extends Application{
                         if(material1== MERCURY)
                         {
                             specificHeat1=MERCURY_SH;
+                            visuals.undefined1=false;
                         }
                         else if(material1== COPPER)
                         {
                             specificHeat1=COPPER_SH;
+                            visuals.undefined1=false;
                         }
                         else if(material1== GOLD)
                         {
                             specificHeat1=GOLD;
+                            visuals.undefined1=false;
                         }
                         else
                         {
-                            visuals.instructions.setText("Please check a box for object 1");
+                            visuals.undefined1=true;
+                                visuals.errorMessage.setText("Please check a box for object 1");
                         }
 
                         //material 2 specific heat determiner
                         if(material2== MERCURY)
                         {
                             specificHeat2=MERCURY_SH;
+                            visuals.undefined2=false;
                         }
                         else if(material2== COPPER)
                         {
                             specificHeat2=COPPER_SH;
+                            visuals.undefined2=false;
                         }
                         else if(material2== GOLD)
                         {
                             specificHeat2=GOLD;
+                            visuals.undefined2=false;
                         }
                         else
                         {
-                            visuals.instructions.setText(visuals.instructions.getText()+"\nplease check a box or object 2");
+                            visuals.undefined2=true;
+                                visuals.errorMessage.setText(visuals.errorMessage.getText() + "\nplease check a box or object 2");
+                        }
+
+                        if(!visuals.undefined1&&!visuals.undefined2)
+                        {
+                            visuals.errorMessage.setText("");
                         }
 
                     }
