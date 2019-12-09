@@ -1,9 +1,4 @@
 package physics.project;
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
@@ -12,11 +7,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
-import javafx.stage.Stage;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -190,9 +183,9 @@ public class setupVisuals {
 
         //intializing the actual components of the mass input for both objects
         mass1Label = new Label("Enter your mass for your first object");
-        mass1Field = new TextField("Object1 mass");
+        mass1Field = new TextField("");
         mass2Label = new Label("Enter your mass for your second object");
-        mass2Field = new TextField("Object2 mass");
+        mass2Field = new TextField("");
         //-------------------------------
 
         //setting the font size of the mass input components
@@ -230,10 +223,10 @@ public class setupVisuals {
         //--------------------
 
         //intializing the actual components of the temperature input for both objects
-        temp1Label = new Label("Enter the temperature for your first object");
-        temp1Field = new TextField("Object1 temperature");
-        temp2Label = new Label("Enter the temperature for your first object");
-        temp2Field = new TextField("Object2 temperature");
+        temp1Label = new Label("Enter the initial temperature for your first object");
+        temp1Field = new TextField("");
+        temp2Label = new Label("Enter the initial temperature for your second object");
+        temp2Field = new TextField("");
         //-------------------------------
 
         //setting the font size of the temperature input components
@@ -262,9 +255,9 @@ public class setupVisuals {
         errorMessage = new Label();
         object1Image = new Label();
         object2Image = new Label();
-        finalMass = new Label("Final mass");
-        energyLoss = new Label("Energy energyLoss");
-        finalTemp = new Label("Final temperature");
+        finalMass = new Label("");
+        energyLoss = new Label("");
+        finalTemp = new Label("");
 
         finalMass.setFont(Font.font("Arial", FontWeight.BOLD, 20));
         energyLoss.setFont(Font.font("Arial", FontWeight.BOLD, 20));
@@ -272,7 +265,7 @@ public class setupVisuals {
 
 
 
-        errorMessage.setFont(Font.font("Arial",FontWeight.BOLD, 20));
+        errorMessage.setFont(Font.font("Arial",FontWeight.BOLD, 10));
 
 
         center = new VBox();

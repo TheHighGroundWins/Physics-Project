@@ -1,6 +1,5 @@
 package physics.project;
 
-import com.sun.scenario.effect.Merge;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -18,9 +17,9 @@ public class Main extends Application{
     private final int COPPER = 2;
     private final int GOLD =3;
 
-    private final double MERCURY_SH = 128;
-    private final double COPPER_SH = 138;
-    private final double GOLD_SH =129;
+    private final double MERCURY_SH = 138;
+    private final double COPPER_SH = 387;
+    private final double GOLD_SH = 129;
     private int material1 = 0;
     private int material2 = 0;
     private double specificHeat1 = 0;
@@ -57,7 +56,7 @@ public class Main extends Application{
         visuals.setup(root);
 
 
-        primaryStage.setScene(new Scene(root, 1080, 600));
+        primaryStage.setScene(new Scene(root, 1280, 600));
         primaryStage.show();
 
         visuals.mercury1.setOnAction(new EventHandler<ActionEvent>() {
@@ -65,6 +64,11 @@ public class Main extends Application{
                                          public void handle(ActionEvent actionEvent) {
                                              material1=MERCURY;
                                              visuals.material1=material1;
+                                             try {
+                                                 visuals.update();
+                                             } catch (FileNotFoundException e) {
+                                                 e.printStackTrace();
+                                             }
                                              if(visuals.copper1.isSelected())
                                              {
                                                  visuals.copper1.setSelected(false);
@@ -81,6 +85,11 @@ public class Main extends Application{
             public void handle(ActionEvent actionEvent) {
                 material1=COPPER;
                 visuals.material1=material1;
+                try {
+                    visuals.update();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
                 if(visuals.mercury1.isSelected())
                 {
                     visuals.mercury1.setSelected(false);
@@ -97,6 +106,11 @@ public class Main extends Application{
             public void handle(ActionEvent actionEvent) {
                 material1=GOLD;
                 visuals.material1=material1;
+                try {
+                    visuals.update();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
                 if(visuals.copper1.isSelected())
                 {
                     visuals.copper1.setSelected(false);
@@ -114,6 +128,11 @@ public class Main extends Application{
             public void handle(ActionEvent actionEvent) {
                 material2=MERCURY;
                 visuals.material2=material2;
+                try {
+                    visuals.update();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
                 if(visuals.copper2.isSelected())
                 {
                     visuals.copper2.setSelected(false);
@@ -130,6 +149,11 @@ public class Main extends Application{
             public void handle(ActionEvent actionEvent) {
                 material2=COPPER;
                 visuals.material2=material2;
+                try {
+                    visuals.update();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
                 if(visuals.mercury2.isSelected())
                 {
                     visuals.mercury2.setSelected(false);
@@ -146,6 +170,11 @@ public class Main extends Application{
             public void handle(ActionEvent actionEvent) {
                 material2=GOLD;
                 visuals.material2=material2;
+                try {
+                    visuals.update();
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
                 if(visuals.copper2.isSelected())
                 {
                     visuals.copper2.setSelected(false);
@@ -209,45 +238,39 @@ public class Main extends Application{
                         if(!visuals.undefined1&&!visuals.undefined2)
                         {
                             visuals.errorMessage.setText("");
-                            if(!visuals.mass1Field.getText().equals("Object1 mass")) {
+                            if(!visuals.mass1Field.getText().equals("")) {
                                 mass1 = Double.parseDouble(visuals.mass1Field.getText());
                             }
                             else
                             {
                                 visuals.errorMessage.setText(visuals.errorMessage.getText()+"Please type in a number for mass 1");
                             }
-                            if(!visuals.mass2Field.getText().equals("Object2 mass")) {
+                            if(!visuals.mass2Field.getText().equals("")) {
                                 mass2 = Double.parseDouble(visuals.mass2Field.getText());
                             }
                             else
                             {
-                                visuals.errorMessage.setText(visuals.errorMessage.getText()+"Please type in a number for mass 2");
+                                visuals.errorMessage.setText(visuals.errorMessage.getText()+"\nPlease type in a number for mass 2");
                             }
 
-                            if(!visuals.mass1Field.getText().equals("Object1 temperature")) {
+                            if(!visuals.temp1Field.getText().equals("")) {
                                 temperature1 = Double.parseDouble(visuals.temp1Field.getText());
                             }
                             else
                             {
-                                visuals.errorMessage.setText(visuals.errorMessage.getText()+"Please type in a number for temperature 1");
+                                visuals.errorMessage.setText(visuals.errorMessage.getText()+"\nPlease type in a number for temperature 1");
                             }
-                            if(!visuals.mass1Field.getText().equals("Object2 temperature")) {
+                            if(!visuals.temp2Field.getText().equals("")) {
                                 temperature2 = Double.parseDouble(visuals.temp2Field.getText());
                             }
                             else
                             {
-                                visuals.errorMessage.setText(visuals.errorMessage.getText()+"Please type in a number for temperature 2");
+                                visuals.errorMessage.setText(visuals.errorMessage.getText()+"\nPlease type in a number for temperature 2");
                             }
 
                             visuals.finalTemp.setText("Final Temperature: "+String.valueOf(Calc.calculateFinalTemperature(mass1,mass2,specificHeat1,specificHeat2,temperature1,temperature2)));
                             visuals.finalMass.setText("Final Mass: "+String.valueOf(Calc.calculateFinalMass(mass1,mass2)));
                             visuals.energyLoss.setText("Change in temperature: "+String.valueOf(Calc.calculateEnergyLoss(temperature1,temperature2)));
-                            try {
-                                visuals.update();
-                            } catch (FileNotFoundException e) {
-                                e.printStackTrace();
-                            }
-
                         }
 
 

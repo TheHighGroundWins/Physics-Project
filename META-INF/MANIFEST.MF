@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: physics.project.Main
+Class-Path: physics.project.Main
+
