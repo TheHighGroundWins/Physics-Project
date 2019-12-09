@@ -11,8 +11,11 @@ public class Calc {
         return after;
     }
 
-    public static double calculateEnergyLoss(double temperature1,double temperature2) {
-        return Math.abs(temperature1 - temperature2);
+    public static double[] calculateEnergyLoss(double mass1, double mass2, double specificHeat1, double specificHeat2, double temperature1, double temperature2) {
+        double[] returner = new double[2];
+        returner[0] = Math.abs(calculateFinalTemperature(mass1, mass2, specificHeat1, specificHeat2, temperature1, temperature2) - temperature1);
+        returner[1] = Math.abs(calculateFinalTemperature(mass1, mass2, specificHeat1, specificHeat2, temperature1, temperature2) - temperature1);
+        return returner;
     }
 
     public static double calculateFinalMass(double mass1, double mass2) {

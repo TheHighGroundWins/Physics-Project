@@ -15,7 +15,7 @@ public class Main extends Application{
     private Calc calc = new Calc();
     private final int MERCURY = 1;
     private final int COPPER = 2;
-    private final int GOLD =3;
+    private final int GOLD = 3;
 
     private final double MERCURY_SH = 138;
     private final double COPPER_SH = 387;
@@ -270,7 +270,8 @@ public class Main extends Application{
 
                             visuals.finalTemp.setText("Final Temperature: "+String.valueOf(Calc.calculateFinalTemperature(mass1,mass2,specificHeat1,specificHeat2,temperature1,temperature2)));
                             visuals.finalMass.setText("Final Mass: "+String.valueOf(Calc.calculateFinalMass(mass1,mass2)));
-                            visuals.energyLoss.setText("Change in temperature: "+String.valueOf(Calc.calculateEnergyLoss(temperature1,temperature2)));
+                            visuals.energyLoss.setText("Change in temperature\n of the first object: "+String.valueOf(Calc.calculateEnergyLoss(mass1, mass2, specificHeat1, specificHeat2, temperature1,temperature2)[0])+"\n" +"\n"+ "Temperature change\n in second object: " + String.valueOf(Calc.calculateEnergyLoss(mass1, mass2, specificHeat1, specificHeat2, temperature1,temperature2)[1]));
+
                         }
 
 

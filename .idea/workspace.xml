@@ -7,12 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="962ad0df-f081-4a2d-ac8a-c02381f2b674" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/physicsproject.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/physics/project/Calc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/physics/project/Calc.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/physics/project/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/physics/project/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/physics/project/setupVisuals.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/physics/project/setupVisuals.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
