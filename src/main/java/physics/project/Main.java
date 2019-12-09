@@ -269,8 +269,8 @@ public class Main extends Application{
                             }
 
                             visuals.finalTemp.setText("Final Temperature: "+String.valueOf(Calc.calculateFinalTemperature(mass1,mass2,specificHeat1,specificHeat2,temperature1,temperature2)));
-                            visuals.finalMass.setText("Final Mass: "+String.valueOf(Calc.calculateFinalMass(mass1,mass2)));
-                            visuals.energyLoss.setText("Change in temperature\n of the first object: "+String.valueOf(Calc.calculateEnergyLoss(mass1, mass2, specificHeat1, specificHeat2, temperature1,temperature2)[0])+"\n" +"\n"+ "Temperature change\n in second object: " + String.valueOf(Calc.calculateEnergyLoss(mass1, mass2, specificHeat1, specificHeat2, temperature1,temperature2)[1]));
+                            visuals.finalMass.setText("\nFinal Mass: "+String.valueOf(Calc.calculateFinalMass(mass1,mass2)));
+                            visuals.energyLoss.setText("\nChange in temperature\n of the first object: "+String.valueOf(Calc.calculateEnergyLoss(mass1, mass2, specificHeat1, specificHeat2, temperature1,temperature2)[0])+"\n" +"\n"+ "Temperature change\n in second object: " + String.valueOf(Calc.calculateEnergyLoss(mass1, mass2, specificHeat1, specificHeat2, temperature1,temperature2)[1]));
 
                         }
 

@@ -14,12 +14,21 @@ public class Calc {
     public static double[] calculateEnergyLoss(double mass1, double mass2, double specificHeat1, double specificHeat2, double temperature1, double temperature2) {
         double[] returner = new double[2];
         returner[0] = Math.abs(calculateFinalTemperature(mass1, mass2, specificHeat1, specificHeat2, temperature1, temperature2) - temperature1);
-        returner[1] = Math.abs(calculateFinalTemperature(mass1, mass2, specificHeat1, specificHeat2, temperature1, temperature2) - temperature1);
-        return returner;
+        returner[1] = Math.abs(calculateFinalTemperature(mass1, mass2, specificHeat1, specificHeat2, temperature1, temperature2) - temperature2);
+        double[] realReturner = new double[2];
+        int int1 = (int) (returner[0] * 10000);
+        realReturner[0] = ((double) int1) / 10000;
+        int int2 = (int) (returner[1] * 10000);
+        realReturner[1] = ((double) int2) / 10000;
+        return realReturner;
     }
 
     public static double calculateFinalMass(double mass1, double mass2) {
-        return mass1 + mass2;
+        int int1 = (int)(mass1*10000);
+        double realMass1 = ((double)int1)/10000;
+        int int2 = (int)(mass2*10000);
+        double realMass2 = ((double)int2)/10000;
+        return realMass1 + realMass2;
     }
 
 }
