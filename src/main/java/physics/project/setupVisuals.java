@@ -182,9 +182,9 @@ public class setupVisuals {
         //--------
 
         //intializing the actual components of the mass input for both objects
-        mass1Label = new Label("Enter your mass for your first object");
+        mass1Label = new Label("Enter your mass for your first object(kg)");
         mass1Field = new TextField("");
-        mass2Label = new Label("Enter your mass for your second object");
+        mass2Label = new Label("Enter your mass for your second object(kg)");
         mass2Field = new TextField("");
         //-------------------------------
 
@@ -223,9 +223,9 @@ public class setupVisuals {
         //--------------------
 
         //intializing the actual components of the temperature input for both objects
-        temp1Label = new Label("Enter the initial temperature for your first object");
+        temp1Label = new Label("Enter the initial temperature for your first object(Celsius)");
         temp1Field = new TextField("");
-        temp2Label = new Label("Enter the initial temperature for your second object");
+        temp2Label = new Label("Enter the initial temperature for your second object(Celsius)");
         temp2Field = new TextField("");
         //-------------------------------
 

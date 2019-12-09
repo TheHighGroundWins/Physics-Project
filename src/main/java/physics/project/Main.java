@@ -243,14 +243,14 @@ public class Main extends Application{
                             }
                             else
                             {
-                                visuals.errorMessage.setText(visuals.errorMessage.getText()+"Please type in a number for mass 1");
+                                visuals.errorMessage.setText(visuals.errorMessage.getText()+"Please type in a number for mass 1(kg)");
                             }
                             if(!visuals.mass2Field.getText().equals("")) {
                                 mass2 = Double.parseDouble(visuals.mass2Field.getText());
                             }
                             else
                             {
-                                visuals.errorMessage.setText(visuals.errorMessage.getText()+"\nPlease type in a number for mass 2");
+                                visuals.errorMessage.setText(visuals.errorMessage.getText()+"\nPlease type in a number for mass 2(kg)");
                             }
 
                             if(!visuals.temp1Field.getText().equals("")) {
@@ -258,19 +258,19 @@ public class Main extends Application{
                             }
                             else
                             {
-                                visuals.errorMessage.setText(visuals.errorMessage.getText()+"\nPlease type in a number for temperature 1");
+                                visuals.errorMessage.setText(visuals.errorMessage.getText()+"\nPlease type in a number for temperature 1(Celsius)");
                             }
                             if(!visuals.temp2Field.getText().equals("")) {
                                 temperature2 = Double.parseDouble(visuals.temp2Field.getText());
                             }
                             else
                             {
-                                visuals.errorMessage.setText(visuals.errorMessage.getText()+"\nPlease type in a number for temperature 2");
+                                visuals.errorMessage.setText(visuals.errorMessage.getText()+"\nPlease type in a number for temperature 2(Celsius)");
                             }
 
-                            visuals.finalTemp.setText("Final Temperature: "+String.valueOf(Calc.calculateFinalTemperature(mass1,mass2,specificHeat1,specificHeat2,temperature1,temperature2)));
-                            visuals.finalMass.setText("\nFinal Mass: "+String.valueOf(Calc.calculateFinalMass(mass1,mass2)));
-                            visuals.energyLoss.setText("\nChange in temperature\n of the first object: "+String.valueOf(Calc.calculateEnergyLoss(mass1, mass2, specificHeat1, specificHeat2, temperature1,temperature2)[0])+"\n" +"\n"+ "Temperature change\n in second object: " + String.valueOf(Calc.calculateEnergyLoss(mass1, mass2, specificHeat1, specificHeat2, temperature1,temperature2)[1]));
+                            visuals.finalTemp.setText("Final Temperature: \n"+String.valueOf(Calc.calculateFinalTemperature(mass1,mass2,specificHeat1,specificHeat2,temperature1,temperature2))+" degrees Celsius\n");
+                            visuals.finalMass.setText("\nFinal Mass: \n"+String.valueOf(Calc.calculateFinalMass(mass1,mass2))+"kg");
+                            visuals.energyLoss.setText("\nChange in temperature\n of the first object: \n"+String.valueOf(Calc.calculateEnergyLoss(mass1, mass2, specificHeat1, specificHeat2, temperature1,temperature2)[0])+" degrees Celsius\n" +"\n"+ "Temperature change\n in second object: \n" + String.valueOf(Calc.calculateEnergyLoss(mass1, mass2, specificHeat1, specificHeat2, temperature1,temperature2)[1])+" degrees Celsius");
 
                         }
 
